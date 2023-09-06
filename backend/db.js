@@ -1,6 +1,12 @@
+require('dotenv').config();
+ 
 const mongoose  = require("mongoose")
-const mongoURI = "mongodb+srv://WhiteShadow:o4QEzRut65ih90i@mystic-routes-db.nezxlys.mongodb.net/"
-//const mongoURI = "mongodb://localhost:27017/"
+
+const mongoURI=`${process.env.MONGO_DB_URI}`;
+
+
+//const mongoURI = "mongodb+srv://WhiteShadow:o4QEzRut65ih90iF@mystic-routes-db.nezxlys.mongodb.net/"
+//const mongoURI = "mongodb://127.0.0.1:27017/"
 const ConnectToMongo = ()=>{
    mongoose.connect(mongoURI).then((res)=>{
       console.log("connected to mongo successfully")
